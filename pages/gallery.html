@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>This is my homepage</title>
+
+<!-- so all browsers will work with thml5 -->
+<!--[if lt IE 9]>
+<script src="scripts/html5shiv.min.js"></script>
+<![endif]-->
+
+<!--Enable older versions of IE to understand media queries-->
+<script src="scripts/respond.js"></script>
+	
+<!--adding text style-->
+<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'> 
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+</head>
+
+<body>
+<div class="main">
+
+	<header><h1>Gallery</h1></header>
+    <div id="mobile_nav"> 
+    
+    <input type="checkbox" id="toggle" />
+    <label for="toggle">MENU</label>   
+    
+	<nav class="mainNav">
+    	<ul>
+        	<li><a href="../index.html">Home</a></li>
+            <li><a href="general_facts.html">General Facts</a></li>
+            <li><a href="species.html">Species</a></li>
+            <li><a href="#">Image Gallery</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>	<!--End of Main navigation-->
+    </div> <!--End of mobile_nav-->
+    <section>
+    	<article>
+        	<h1>Penguin Gallery</h1>
+			<p>These are just some images of the many penguin species currently exist.  There is around 16-20 known species.</p>
+        </article>
+        
+        <article class="photos">
+        	<ul id="image_gallery"> <!--Small images are 150x150 -->
+            	<li><a herf="#" title="Scouting"><img src="../images/antarctica_pen.jpg" alt="penguin 1"></a></li>
+                <li><a herf="#" title="Fluffy"><img src="../images/apt_family.jpg" alt="penguin 2"></a></li>
+                <li><a herf="#" title="Family Pic"><img src="../images/baby_penguin.jpg" alt="penguin 3"></a></li>
+                <li><a herf="#" title="Overview"><img src="../images/blue_sky.jpg" alt="penguin 4"></a></li>
+                <li><a herf="#" title="Diving"><img src="../images/diving_underwater.jpg" alt="penguin 5"></a></li>
+                <li><a herf="#" title="Mountain View"><img src="../images/overview_iceberg.jpg" alt="penguin 6"></a></li>
+                <li><a herf="#" title="Out of Water"><img src="../images/penguin_flying.jpg" alt="penguin 7"></a></li>
+                <li><a herf="#" title="Group Dive"><img src="../images/penguin_habitat.jpg" alt="penguin 8"></a></li>
+                <li><a herf="#" title="Playing"><img src="../images/penguin_wildlife.jpg" alt="penguin 9"></a></li>
+                <li><a herf="#" title="Babies"><img src="../images/penguin-chicks.jpg" alt="penguin 10"></a></li>
+                <li><a herf="#" title="Group Shot"><img src="../images/penguins-underwater.jpg" alt="penguin 11"></a></li>
+            </ul> <!--End of image_gallery-->
+            <div class="clearIt"></div>	<!--will help images remain within bounds of the section-->
+    	</article>	<!---End of photos article tag -->
+        
+     </section>
+		<footer>&copy; 2015 Penguin Reserve</footer> 
+            
+</div> <!--End of main class-->
+</body>
+</html>

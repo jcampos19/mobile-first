@@ -1,0 +1,451 @@
+* {
+	padding:0;
+	margin:0;
+}
+/*clearing*/
+.clearIt {
+	clear:both;
+}
+html {
+	font-size:100%;		/*font size = 16px*/
+	line-height:1.5;	/*spacing text out*/
+}
+
+/*******************Global Styles *******************/
+body {
+	color:#fff;
+	background: url(../images/arctic_wallpaper.jpg) fixed no-repeat top right;	/*center page both horizontal & vert*/
+							/*will always be truely centered; recommended to use large images (1000px) to prevent blur*/
+	background-size:cover;
+		-moz-background-size:cover;		/*fallback for those that don't support html5*/
+		-webkit-background-size:cover;	/*image will fit perfectly with variying screen size*/
+	font:normal 100% 'Quicksand', sans-serif;	/*calling the text style*/
+	margin: 0 auto;
+	max-width: 960px;
+}
+h1 {
+	font-size: 1.875em;		/*30 = 30/16=result*/
+	margin-bottom: 0.25em;
+	color: #03F;
+}
+p { 
+	font-size: 1.125em;		/*18px*/
+	margin: 0 0 4px 0;
+	color: #000;
+}
+/*altering columns*/
+img.floated{
+		float:left;
+		display:block;			/*image will appear on its own line*/
+		margin: 0 3em 0.5em .25em;
+		width: 80%;
+		min-width:200px;		/*image will not get any smaller*/
+	}
+.col2 {
+	width: 93%;				/*making the column smaller as it shrinks in size*/
+	border:none;			/*remove the border surrounding the video*/
+	}
+.col2 ol {	
+margin-left: 15px;			/*shift slightly from left */
+}
+/*end of column code */	
+img, article img, img.floated {	/*responsive image; fluid images; only allowed its max size for the container*/
+	max-width:100%;	/*downside is for mobile may not need such a big picture*/
+	height:auto;
+	border:solid 2px #333;
+}
+#image_wrap {
+	float: right;	/*img will be on the right and text will wrap on the left */
+	min-width:200px;	/*img stops shrinking at 200px mostly for mobile sizes*/
+    display: block;
+}
+section {
+	margin: 0 5px;
+	padding: 10px;
+	border: solid 2px #fff;
+	color:#000;
+	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.85);
+}
+.main {
+	max-width: 900px;
+	margin: 25px auto 0;
+}
+footer {
+	margin: 10px 0;
+	text-align:center;
+	font-size: 1em;
+}
+
+/*small mobile navigation*/
+nav {
+	font-weight: 700;
+	padding: 0 0 6px 0px;
+	font-size: .75em; /*16px*/ 
+	margin-bottom: 5px;
+}
+nav li {
+	list-style-type: none;
+	border: 2px solid #fff;
+	padding: 4px 7px;
+	background-color: hsla(0,0%, 0%,.6);	/*30% white*/
+	display:block;
+	text-align:center;
+	color: #F00;
+	margin: 10px 5px;			/*will fall in same lines with section*/
+	text-transform:uppercase;	/*text displays in uppercase*/
+}
+nav a {
+	color: #fff;
+	text-decoration: none;
+	display:block;
+}
+nav a:hover {
+	display:block;
+}
+nav li:hover {
+	font-weight: 700;
+	background-color:#999;
+	border:2px solid #333;
+}
+#mobile_nav nav{	/*hiding nav section*/
+	height:0;
+	overflow:hidden;
+}
+/*menu checkbox hack*/
+body { 
+	    -webkit-animation: bugfix infinite 1s; 
+}
+/*end of menu hack*/
+/*when user clicks the checkbox and hides/expands*/
+#mobile_nav input[type=checkbox] {
+	position: absolute; 	/*Checkbox to never be seen*/
+	top: -999em;
+	left: -999em;
+}
+
+#mobile_nav label {
+	display: block;
+	background:url("../images/nav-icon.png")no-repeat right center;
+	text-indent: -999em;
+	cursor: pointer;	/*cursor like a link would*/
+		-webkit-user-select: none;  /* Chrome all / Safari all */
+	    -moz-user-select: none;     /* Firefox all */
+	    -ms-user-select: none;      /* IE 10+ */
+		-webkit-user-select: none;
+	    /*user-select: none; */
+		position:relative;
+		top: -40px;
+		right:8px;	/*moves onto image*/
+}
+#mobile_nav input[type=checkbox]:checked ~ nav {
+	    height: auto;
+	    overflow: hidden;  
+	}
+
+/* end code small movile navigation navigation */
+
+/*Code for table */
+td, th {
+	padding: 6px; 
+	border: 1px solid #ccc;		/*table border is grey*/
+	text-align: left; 			/*text is on top left side*/
+	vertical-align: top;
+}
+
+tr:nth-of-type(even) { /*zebra striping*/
+	background: #999;	/*every even column has background of grey*/
+}
+/*end of table code*/
+
+/*image gallery alltering*/
+#image_gallery img {
+	width: 250px;
+	height: 250px;
+}
+/*end of gallery styles*/
+
+/*remove bullets*/
+#image_gallery ul {
+	list-style:none;
+}
+
+.photos li {
+	float: left;		/*will need to use clearIt; images will no longer be within the borders*/
+	position:relative;	/*allow to position other items*/
+	list-style:none;	/*removes bullets from the title text*/
+}
+.photos img {	/*spaces images apart*/
+	margin: 0 1em 1em 0;
+}
+.photos a:before {	/*makes title for pic visible*/
+	content:attr(title);	/*calls the title to page*/
+	display: block;
+	position: absolute;		/*text going to stay put*/
+	top: 228px;
+	left:2px;				/*moves slightly to left*/
+	width: 250px;
+	background-color:rgba(255,255,255, 0.9);
+	text-align:center;		/*centers text*/
+}
+/*end of image gallery altering*/
+
+/*video*/
+.my_video {
+	position: relative;	/*doesn't do anything by itself; absolutely position*/
+	padding-bottom:56.25%;	/*16x9	= 16.9height of 56.25*/
+	padding-top:25px;		/*space for the header of youtube*/
+	height:0;
+	overflow: hidden;
+	}
+.my_video iframe {	/**/
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;	/*using 100% of the browser*/
+	height:100%;
+	}
+/*end of video*/
+
+/*form small*/
+input[type=text], input[type=email], input[type=tel], input[type=url], input[type=submit], textarea, button, select {
+	-webkit-appearance:none;	/*used to display native styling*/
+	-moz-appearance:none;
+	background:#fff;
+	border-radius: 0;
+	padding: 7px;
+	margin: 0 0 10px 0;
+}
+form#contactingForm {	/*altering form appearance*/
+	width:75%;
+	margin: 0 auto;
+	max-width:500px;
+	background-color:#999;
+	border-radius: 25px;	/*makes table corners round*/
+	box-shadow: 10px 10px 10px #666;
+	margin-bottom: 1em;	/*gives space of form*/
+}
+#contactingForm fieldset {
+	border:none;
+	padding:0;
+	margin:0;
+}
+#contactingForm fieldset:before {	/*this alters form titles*/
+	padding:20px 10px 3px 10px;
+	content: attr(title);
+	display: block;
+	padding: 15px 2px 3px 15px;
+	font-weight: bold;
+	font-size: 2em;
+	color: #333;
+	margin:0 auto;	/*centering*/;
+}
+#contactingForm legend {	/*gets rid of the form title*/
+	display: none;
+}
+#contactingForm ol {
+	margin:0;
+	padding:0;
+}
+#contactingForm ol li{	/*list items*/
+	list-style:none;	/*removes the bullets*/
+	padding:10px;	/*spaces lists*/
+}
+#contactingForm ol li ol li {
+	padding-bottom:10px;
+	display:inline;
+}
+#contactingForm ol li ol li label {
+	font-weight: normal;
+	display:inline;
+	cursor:pointer;
+}
+#contactingForm ol li.singleLine {	/*label of that child*/
+	font-weight: normal;
+	display:inline;
+}
+#contactingForm ol li label, .groupHead {	/*grab labels, and grouphead*/
+	font-weight:bold;
+	display:block;
+	margin-bottom:5px;
+	color:#333;
+	padding-left: 5px;
+}
+
+#contactingForm ol li input, #contactingForm textarea {	/*gives input boxes a more pleasant feature*/
+	display:block;
+	padding: 5px;
+	width:96%;
+	margin: 0 auto;	/*center items*/
+	outline: none;
+	border: solid 1px #999;
+	border-radius: 5px;
+}
+#contactingForm ol li ol li input {	/*fix the input buttons from stretching*/
+	width:auto;
+	display:inline;
+}
+#contactingForm textarea {
+	height: 100px;		/*expands the comment box*/
+	margin-bottom: 10px;
+}
+
+#contactingForm ol li select {	/*fixing select button*/
+	width:50%;
+	min-width:100px;
+	color: #06C;
+	font-weight: bold;
+	margin: 0 0 5px 10px;
+	border-radius: 10px;		/*makes edges round*/
+}
+#contactingForm button {
+	width: 20%;
+	min-width:100px;
+	height: 30px;
+	padding: 0;
+	border: 2px solid #CCC;
+	margin: 5px 0 15px 20px;
+	color: #fff;
+	background-color:#666;
+	cursor: pointer;
+}
+#contactingForm button:hover {	/*hover over submit button*/
+	background-color: #CCC;
+	color: #333;
+	border: 2px solid #333;
+}
+/*end form */
+
+@media screen and (max-width:760px){	/*screen size < 760px; targetting smaller screen sizes*/
+	body table {
+		font-size: 110%;
+	}
+	table, thead, tbody, th, td, tr {
+		display: block;
+		}
+	thead tr {	/*will remove thead by positioning them far away from screen*/
+		position: absolute; 
+		top: -9999px;
+		left: -9999px;
+		}
+	td {	/*displays over to the right*/
+		border:none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;	/*gives the illusion of another column appearing*/
+		}
+	tr:nth-of-type(odd) td {	/*border on the bottom to be white to even rows*/
+		border-bottom:solid 1px #fff;
+	}
+	td:before { /*altering the left column; will not see any changes yet*/
+		position: absolute;
+		left: 6px;
+		width: 45%;	/*filling in the other 50% of the column*/
+		padding-right: 10px;
+		white-space: nowrap;	/*will wrap around each other in a single line*/
+		font-weight: bold;
+	}
+	/*targetting table cell; inserting this content*/
+	td:nth-of-type(1):before { content: " ";}
+	td:nth-of-type(2):before { content: "Name:";}
+	td:nth-of-type(3):before { content: "Size:";}
+	td:nth-of-type(4):before { content: "Diet:";}
+	td:nth-of-type(5):before { content: "Location:";}
+	td:nth-of-type(6):before { content: "Nest Type:";}
+
+	td:nth-of-type(1) { /*gets rid of padding for image*/
+		padding-left:0;
+	}
+	
+/*column alterations*/
+img.floated {
+		display:block;
+		float:left;
+		margin: 0 0 2em 0;
+}
+.col1, .col2 {
+		float:none;	/*get rid of the columns floating*/
+		width:100%;
+		margin:0;
+		padding: 0;
+		}
+.col2 {
+		padding: 0.7em;
+		width: 96%;
+}
+/*end of column code*/
+
+}
+@media screen and (min-width: 760px) {	
+#mobile_nav nav {
+	margin:0;	/*remove all spacing and padding from nav (removes bottom space)*/
+	padding: 0;
+	height: auto;
+	overflow:visible;
+	/*position:absolute;
+	top: 50px;*/
+}
+#mobile_nav label {	/*gets rid of hamburger image*/
+	display: none;
+}
+#mobile_nav a {
+	
+}
+#mobile_nav li {
+	border-color: #fff;	/*change border color: white */
+	border-bottom:none;		/*remove border to remove thickness*/
+	display: inline-block;	/*appear side by side*/
+	margin: 0 0 0 5px;	/*move slightly*/
+}
+
+/*column code*/
+.col1 {
+	float: left; 
+	width: 50%;
+	margin-right: 5%;
+	margin-top: 1em;
+	}
+.col2 {
+	padding: 1em;
+	float: left; 
+	width: 40%;
+	margin: 1em 0 0;	/*spacing on the top*/
+	background-color: #AAE2F2;
+	border: 2px solid #666;
+	}	
+img.floated {
+	float: left;	/*img will be on the right and text will wrap on the left */
+	margin: 0 0 1em 2em;	/*so img and text don't crash*/
+	min-width:200px;	/*img stops shrinking at 200px*/
+	}
+/*end of column code*/
+
+
+/*form styles*/
+#contactingForm ol li input, #contactingForm textarea {
+	float:left;
+	width:50%;
+}
+#contactingForm ol li {
+	clear:both;			/*so content looks clean*/
+}
+#contactingForm ol li label, .groupHead {
+	float:left;			/*so it appears next to each other*/
+	min-width: 15%;
+	padding-left: 10px;
+	margin-right: 10px;
+	text-align: left;		/*titles appear on the left*/
+	display:block;
+}
+input#commentItem, input#questionsItem {
+	height: 22px;
+}
+
+#contactingForm button {	/*hover over submit button*/
+	float: right;
+	margin-right: 25px;
+}
+
+/*end of form styles*/
+
+}

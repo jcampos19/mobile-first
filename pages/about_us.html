@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>About Us</title>
+
+<!-- so all browsers will work with thml5 -->
+<!--[if lt IE 9]>
+<script src="scripts/html5shiv.min.js"></script>
+<![endif]-->
+
+<!--Enable older versions of IE to understand media queries-->
+<script src="scripts/respond.js"></script>
+	
+<!--adding text style-->
+<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'> 
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+	
+</head>
+
+<body>
+<div class="main">
+
+	<header><h1>Penguin Reserve</h1></header>
+    <div id="mobile_nav"> 
+    
+    <input type="checkbox" id="toggle" />
+    <label for="toggle">MENU</label>   
+    
+	<nav class="mainNav">
+    	<ul>
+        	<li><a href="../index.html">Home</a></li>
+            <li><a href="general_facts.html">General Facts</a></li>
+            <li><a href="species.html">Species</a></li>
+            <li><a href="gallery.html">Image Gallery</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>	<!--End of Main navigation-->
+    </div> <!--End of mobile_nav-->
+    <section>
+    	<article>
+    		<h1>About Us</h1>
+    			<div class="col1">
+        			<p><img src="../images/group_penguin.jpg" alt="penguin_family" class="floated">
+                    	Protecting the wildlife of these animals as well as educationing the masses about them.</p>
+    			</div> <!--End of col1 -->
+    
+   				<div class="col2">	<!--Creating a second column-->
+        			<h1>Video of the week</h1>
+    					<p>A baby penguins first steps</p>
+            		<div class="my_video"><iframe width="420" height="315" 
+                    src="http://www.youtube.com/embed/3In4gDQMa9Q" frameborder="0" allowfullscreen></iframe>
+					</div>	<!--End of my_video -->
+				</div> <!--End of col2-->
+    	</article>	<!---End of article tag -->
+        	<div class="clearIt"></div>	<!--will help images remain within bounds of the section-->
+     </section> <!--End of section-->
+		<footer>&copy; 2015 Penguin Reserve</footer> 
+            
+</div> <!--End of main class-->
+</body>
+</html>

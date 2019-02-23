@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+
+<!-- so all browsers will work with thml5 -->
+<!--[if lt IE 9]>
+<script src="scripts/html5shiv.min.js"></script>
+<![endif]-->
+
+<!--Enable older versions of IE to understand media queries-->
+<script src="scripts/respond.js"></script>
+	
+<!--adding text style-->
+<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'> 
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+</head>
+
+<body>
+<div class="main">
+
+	<header><h1>Penguin Reserve</h1></header>
+    <div id="mobile_nav"> 
+    
+    <input type="checkbox" id="toggle" />
+    <label for="toggle">MENU</label>   
+    
+	<nav class="mainNav">
+    	<ul>
+        	<li><a href="../index.html">Home</a></li>
+            <li><a href="general_facts.html">General Facts</a></li>
+            <li><a href="species.html">Species</a></li>
+            <li><a href="gallery.html">Image Gallery</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>	<!--End of Main navigation-->
+    </div> <!--End of mobile_nav-->
+    <section>
+    	<article>
+        	<h1>Contact Us</h1>
+            <p>Penguin Reserve - 500 La Jolla Ave, San Diego, CA 92156</p>
+            <p>Phone: (879)686-2345</p>
+            <p>Fax: (658)268-2656</p>
+            <p>Email: <a href="mailto:info@penguins.com">info@penguins.com</a></p>	
+        	<p>Please don't hesitate to email/ call us with any concerns or questions</p>
+            
+<!--form Start-->
+<form id="contactingForm" class="contactInfo" action="#" method="post">
+	<fieldset id="contacting" title="Email Us">
+    	<legend>Email Us</legend>
+        <ol> <!--Contain form elements -->
+        	<li>
+            	<label for="name">Name :</label>
+                <input type="text" name="name" id="name" title="Please enter your name" autofocus placeholder="Last, First" required />
+            </li>
+            <li>
+            	<label for="email">Email :</label>
+                <input type="text" name="email" id="email" title="Please enter email address" autofocus placeholder="mail@email.com" required />
+            </li>
+            <li>
+            	<label for="tel">Phone Number :</label>
+                <input type="tel" name="tel" id="tel" title="Please enter phone number" autofocus placeholder="000-000-000" required />
+            </li>
+            <li>
+            	<label for="person_contact">Form of contacting you :</label>
+                <select name="person_contact" id="person_contact">
+                	<option value="blank_select">Select</option>
+                	<option value="phone_person">Phone</option>
+                    <option value="email_person">Email</option>
+                    <option value="either_person">Either</option>
+                </select>
+            </li>
+        </ol>
+	</fieldset> <!--End of first fieldset -->
+    
+    <fieldset id="comments" title="Comments">
+    	<legend>Comments</legend>
+        <ol>
+        	<li><div class="groupHead">Request Type</div>
+            <ol>
+            	<li>
+                	<input type="radio" name="requestType" value="questions" id="questionsItem" />
+                    <label for="questionsItem">Question</label>
+                </li>
+                <li>
+                	<input type="radio" name="requestType" value="comment" id="commentItem" />
+                    <label for="commentItem">Comment</label>
+                </li>
+            </ol>
+            </li>
+            	<li>
+                	<label for="comments">Comments or Questions</label>
+                    <textarea name="comments" id="inquiry"></textarea>
+                </li>
+        </ol>
+        <div class="clearIt">
+        <button type="submit">Submit</button>
+   	</fieldset>	<!--Close second fieldset-->    
+</form> <!--Close form-->
+
+
+
+<!--End of form-->
+		</article>
+        	
+    </section>
+		<footer>&copy; 2015 Penguin Reserve</footer> 
+        
+</div> <!--End of remarks class-->
+</body>
+</html>
